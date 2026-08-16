@@ -282,6 +282,21 @@ main {
 .pub-venue   { margin: .1rem 0 0; font-size: .92rem; color: var(--muted); }
 .pub-note    { color: var(--faint); }
 
+/* 색인 표시 (SCIE / Scopus / KCI) */
+.idx {
+  display: inline-block;
+  margin-left: .15rem;
+  padding: 0 .38rem;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: .7rem;
+  letter-spacing: .04em;
+  line-height: 1.5;
+  color: var(--faint);
+  vertical-align: .06em;
+  white-space: nowrap;
+}
+
 .pub-actions {
   display: flex;
   flex-wrap: wrap;

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hyun Go — Curriculum Vitae</title>
+
+<!-- ============================================================
+     CV 원본. 이 파일을 고친 뒤 build-cv.cmd 를 더블클릭하면
+     assets/cv.pdf 가 다시 만들어집니다.
+
+     또는 브라우저로 이 파일을 열고 Ctrl+P → "PDF로 저장",
+     여백 "기본", "머리글/바닥글" 체크 해제.
+     ============================================================ -->
+
+<style>
+@page { size: A4; margin: 16mm 15mm 14mm; }
+
+:root {
+  --ink:    #16150f;
+  --muted:  #55524a;
+  --rule:   #c9c4b8;
+  --sans: "Segoe UI", -apple-system, "Malgun Gothic", Roboto, sans-serif;
+  --serif: "Palatino Linotype", Palatino, Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: var(--sans);
+  font-size: 9.6pt;
+  line-height: 1.45;
+}
+
+/* 화면으로 열었을 때만 종이처럼 보이게 (인쇄 시에는 @page가 적용됨) */
+@media screen {
+  body { max-width: 210mm; margin: 0 auto; padding: 16mm 15mm; }
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* ---------- 머리말 ---------- */
+
+.name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 21pt;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+.name .ko { font-size: .5em; font-weight: 400; color: var(--muted); }
+
+.headline { margin: 3pt 0 0; font-size: 10pt; }
+.headline .affil { color: var(--muted); }
+
+.contact {
+  margin: 5pt 0 0;
+  font-size: 8.8pt;
+  color: var(--muted);
+}
+.contact span + span::before { content: "  ·  "; color: var(--rule); }
+
+.rule { border: 0; border-top: 1.2pt solid var(--ink); margin: 9pt 0 0; }
+
+/* ---------- 섹션 ---------- */
+
+h2 {
+  margin: 13pt 0 5pt;
+  padding-bottom: 2pt;
+  border-bottom: .6pt solid var(--rule);
+  font-family: var(--sans);
+  font-size: 8.6pt;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  break-after: avoid;
+}
+
+h3 {
+  margin: 8pt 0 3pt;
+  font-family: var(--sans);
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--muted);
+  break-after: avoid;
+}
+
+p { margin: 0 0 4pt; }
+
+/* ---------- 항목 (연도 + 내용) ---------- */
+
+.item {
+  display: grid;
+  grid-template-columns: 20mm 1fr;
+  gap: 0 5mm;
+  margin-bottom: 5pt;
+  break-inside: avoid;
+}
+.item .when {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.item .what { min-width: 0; }
+
+.what .t { font-weight: 600; }
+.what .s { color: var(--muted); }
+
+/* 논문 목록은 저자·제목·출처 순으로 */
+.ref .au   { }
+.ref .ti   { font-style: italic; }
+.ref .src  { color: var(--muted); }
+.ref strong { font-weight: 700; }
+
+.interests { margin-bottom: 2pt; }
+
+.foot {
+  margin-top: 14pt;
+  padding-top: 5pt;
+  border-top: .6pt solid var(--rule);
+  font-size: 8pt;
+  color: var(--muted);
+  text-align: right;
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="name">Hyun Go <span class="ko">고현</span></h1>
+<p class="headline">
+  PhD Student, Department of Architectural Engineering<br>
+  <span class="affil">University of Seoul, 163 Seoulsiripdae-ro, Dongdaemun-gu, Seoul 02504, Republic of Korea</span>
+</p>
+<p class="contact">
+  <span>gohyun2000@uos.ac.kr</span>
+  <span>ORCID 0009-0007-0160-7882</span>
+  <span>gohyun2000.github.io</span>
+</p>
+<hr class="rule">
+
+<h2>Research Interests</h2>
+<p class="interests">
+  Seismic loss assessment · Seismic performance evaluation of steel structures ·
+  Nonlinear dynamic and incremental dynamic analysis · Pipeline-supporting structures
+  (pipe racks) · Steel concentrically braced frames · Gusset-plate connections
+</p>
+
+<h2>Education</h2>
+
+<div class="item">
+  <div class="when">2025.03 –</div>
+  <div class="what">
+    <div class="t">PhD in Architectural Engineering</div>
+    <div class="s">The Graduate School, University of Seoul — Advisor: Prof. Hyung-Joon Kim</div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2023 – 2025</div>
+  <div class="what">
+    <div class="t">MS in Engineering, Architectural Engineering</div>
+    <div class="s">The Graduate School, University of Seoul — Advisor: Prof. Hyung-Joon Kim</div>
+    <div class="s">Thesis: <i>Seismic Risk of Pipeline Supporting CBFs Designed According to Different
+      Seismic Design Requirements</i></div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2019 – 2023</div>
+  <div class="what">
+    <div class="t">BS in Engineering, Architectural Engineering</div>
+    <div class="s">University of Seoul</div>
+  </div>
+</div>
+
+<h2>Peer-Reviewed Journal Articles</h2>
+
+<div class="item ref">
+  <div class="when">2026</div>
+  <div class="what">
+    <span class="au"><strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">An equivalent single-degree-of-freedom model for estimating the seismic
+      fragility of pipe-rack steel concentrically braced frames.</span>
+    <span class="src">Journal of the Computational Structural Engineering Institute of Korea. (in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2025</div>
+  <div class="what">
+    <span class="au"><strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">Seismic risk evaluation of pipeline supporting chevron steel concentrically
+      braced frames designed according to general steel design requirements.</span>
+    <span class="src">Engineering Structures, 343, 121200. doi:10.1016/j.engstruct.2025.121200</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2024</div>
+  <div class="what">
+    <span class="au"><strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">Probabilistic seismic performance of pipeline supporting CBFs according to
+      seismic design parameters and requirements.</span>
+    <span class="src">Journal of Korean Society of Steel Construction, 36(4), 229–241.
+      doi:10.7781/kjoss.2024.36.4.229 (in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023</div>
+  <div class="what">
+    <span class="au">Shin, Y.-S., <strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">Simplified FEA model for non-seismically detailed gusset plates welded to a
+      column web only.</span>
+    <span class="src">Journal of Korean Society of Steel Construction, 35(6), 303–314.
+      doi:10.7781/kjoss.2023.35.6.303 (in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023</div>
+  <div class="what">
+    <span class="au">Shin, Y.-S., <strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">Compression buckling behavior and stress distribution of non-seismically
+      detailed gusset plates welded to a column.</span>
+    <span class="src">Journal of the Architectural Institute of Korea, 39(6), 235–243.
+      doi:10.5659/JAIK.2023.39.6.235 (in Korean)</span>
+  </div>
+</div>
+
+<h2>Conference Presentations</h2>
+
+<h3>International</h3>
+
+<div class="item ref">
+  <div class="when">2025.11</div>
+  <div class="what">
+    <span class="ti">Collapse capacity and pipeline leakage of pipeline-supporting chevron CBFs
+      designed with general provisions.</span>
+    <span class="src">13th International Symposium on Steel Structures &amp; 14th Pacific Structural
+      Steel Conference (ISSS-PSSC 2025), Jeju, Korea. (first author)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2025.11</div>
+  <div class="what">
+    <span class="ti">Sliding and rocking behavior of medical beds under seismic excitations.</span>
+    <span class="src">13th International Symposium on Steel Structures &amp; 14th Pacific Structural
+      Steel Conference (ISSS-PSSC 2025), Jeju, Korea. (second author)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023.11</div>
+  <div class="what">
+    <span class="ti">Dynamic characteristics of pipeline supporting steel frames without diaphragm.</span>
+    <span class="src">12th International Symposium on Steel Structures (ISSS 2023), Jeju, Korea.
+      (second author)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023.09</div>
+  <div class="what">
+    <span class="au"><strong>Go, H.</strong>, &amp; Kim, H.-J.</span>
+    <span class="ti">Cyclic behavior of single and double-angle bracing members employed in
+      pipeline-supporting structures.</span>
+    <span class="src">EUROSTEEL 2023, Amsterdam, the Netherlands. ce/papers, 6(3–4), 2226–2231.
+      doi:10.1002/cepa.2293</span>
+  </div>
+</div>
+
+<h3>Domestic</h3>
+
+<div class="item ref">
+  <div class="when">2026</div>
+  <div class="what">
+    <span class="ti">A simplified equivalent single-degree-of-freedom model for seismic fragility
+      assessment of pipe-rack steel concentrically braced frames.</span>
+    <span class="src">Annual Conference of the Computational Structural Engineering Institute of
+      Korea. (first author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2025</div>
+  <div class="what">
+    <span class="ti">Pipeline leakage performance of chevron steel braced-frame pipe racks
+      satisfying only general steel provisions.</span>
+    <span class="src">Annual Conference of the Korean Society of Steel Construction.
+      (first author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2024</div>
+  <div class="what">
+    <span class="ti">Collapse performance of pipe-rack steel braced frames designed according to
+      seismic design codes.</span>
+    <span class="src">Annual Conference of the Korean Society of Steel Construction.
+      (first author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2024</div>
+  <div class="what">
+    <span class="ti">Seismic resistance of steel braced frames for outdoor pipe racks according to
+      seismic design parameters.</span>
+    <span class="src">Annual Conference of the Computational Structural Engineering Institute of
+      Korea. (first author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2024</div>
+  <div class="what">
+    <span class="ti">Prediction of fracture lines and net-section fracture strength of bolted
+      gusset-plate connections according to geometry and boundary conditions.</span>
+    <span class="src">Annual Conference of the Computational Structural Engineering Institute of
+      Korea. (second author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023</div>
+  <div class="what">
+    <span class="ti">A computational program for calculating the connection strength of gusset plates.</span>
+    <span class="src">Academic Symposium of the Computational Structural Engineering Institute of
+      Korea. (second author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2023</div>
+  <div class="what">
+    <span class="ti">Evaluation of existing prediction equations for the buckling strength of
+      column-welded gusset plates.</span>
+    <span class="src">Annual Conference of the Computational Structural Engineering Institute of
+      Korea. (third author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2022</div>
+  <div class="what">
+    <span class="ti">Finite element analysis method for pipe-rack bracing members with double-angle
+      sections.</span>
+    <span class="src">Annual Conference of the Korean Society of Steel Construction.
+      (first author, in Korean)</span>
+  </div>
+</div>
+
+<div class="item ref">
+  <div class="when">2022</div>
+  <div class="what">
+    <span class="ti">Hysteretic behavior of single-angle bracing members in pipe-rack supporting
+      frames using finite element analysis.</span>
+    <span class="src">Annual Conference of the Korea Institute for Structural Maintenance and
+      Inspection. (first author, in Korean)</span>
+  </div>
+</div>
+
+<h2>Awards &amp; Honors</h2>
+
+<div class="item">
+  <div class="when">2026</div>
+  <div class="what">
+    <div class="t">Best Presentation Award</div>
+    <div class="s">Korean Society of Steel Construction — Annual Conference, structural division</div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2025</div>
+  <div class="what">
+    <div class="t">Academic Award</div>
+    <div class="s">Korean Society of Steel Construction — for a journal article</div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2025</div>
+  <div class="what">
+    <div class="t">Grand Prize, Outstanding Graduation Thesis Competition</div>
+    <div class="s">Architectural Institute of Korea — master's division</div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2023</div>
+  <div class="what">
+    <div class="t">Encouragement Prize, Outstanding Graduation Thesis Competition</div>
+    <div class="s">Architectural Institute of Korea — bachelor's division</div>
+  </div>
+</div>
+
+<div class="item">
+  <div class="when">2022</div>
+  <div class="what">
+    <div class="t">Best Presentation Award</div>
+    <div class="s">Korea Institute for Structural Maintenance and Inspection — Annual Conference,
+      structural division</div>
+  </div>
+</div>
+
+<h2>Certifications</h2>
+
+<div class="item">
+  <div class="when">2024.06</div>
+  <div class="what">
+    <div class="t">Engineer Architecture <span class="s">(건축기사)</span></div>
+    <div class="s">National Technical Qualification, Human Resources Development Service of Korea</div>
+  </div>
+</div>
+
+<p class="foot">Updated August 2026</p>
+
+</body>
+</html>
