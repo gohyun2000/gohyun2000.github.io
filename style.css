@@ -329,6 +329,10 @@ main {
 }
 
 .tl-title { margin: 0; font-weight: 600; font-size: .98rem; }
+
+/* 영문 사이에 섞인 한글은 대체 폰트(맑은 고딕)로 잡혀 굵기·모양이 달라 보입니다.
+   보조 표기처럼 연하게 처리해 그 차이가 의도된 것으로 읽히게 합니다. */
+.ko { font-weight: 400; font-size: .95em; color: var(--faint); }
 .tl-meta  { margin: .1rem 0 0; font-size: .9rem; color: var(--muted); }
 
 .cv-note {
