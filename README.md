@@ -72,4 +72,5 @@ Settings → Pages → **Custom domain** 에 도메인을 입력하고, 도메�
 ## 참고
 
 - 저장소가 Public이므로 올린 파일은 누구나 볼 수 있습니다. 미공개 원고나 개인정보가 담긴 PDF는 올리지 마세요.
+- `Papers/`, `Picture/` 폴더는 `.gitignore`에 넣어 두었습니다. 출판사(Elsevier 등)에 저작권이 있는 논문 PDF를 공개 저장소에 올리면 문제가 되므로, 논문은 DOI 링크로만 연결하고 원본 PDF는 로컬에만 두세요.
 - 검색 노출을 원하면 [Google Search Console](https://search.google.com/search-console)에 주소를 등록하세요.

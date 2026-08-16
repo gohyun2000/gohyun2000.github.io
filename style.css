@@ -159,7 +159,8 @@ main {
   color: var(--text);
   margin: 2rem 0 .9rem;
 }
-.subhead:first-of-type { margin-top: 0; }
+/* 섹션 제목(h2) 바로 뒤에 오는 소제목만 위 여백을 없앱니다. */
+.section > h2 + .subhead { margin-top: 0; }
 
 /* ---------- 프로필 ---------- */
 
