@@ -1,0 +1,380 @@
+/* ============================================================
+   Academic homepage — stylesheet
+   색이나 여백을 바꾸고 싶으면 아래 :root 값만 고치면 전체에 반영됩니다.
+   ============================================================ */
+
+:root {
+  /* 색상 (라이트 모드) */
+  --bg:        #fcfcfa;
+  --surface:   #ffffff;
+  --text:      #1b1a18;
+  --muted:     #6d6a64;
+  --faint:     #a5a29b;
+  --border:    #e4e1da;
+  --accent:    #35507a;
+  --accent-soft: #eef2f8;
+
+  /* 타이포그래피 */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic",
+               "Apple SD Gothic Neo", Roboto, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+                "Nanum Myeongjo", serif;
+
+  /* 레이아웃 */
+  --measure: 46rem;      /* 본문 최대 너비 */
+  --gap: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg:        #15171a;
+    --surface:   #1c1f23;
+    --text:      #e7e5e1;
+    --muted:     #a09c96;
+    --faint:     #6f6c67;
+    --border:    #2c3036;
+    --accent:    #8fb4e2;
+    --accent-soft: #1f262f;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg:        #15171a;
+  --surface:   #1c1f23;
+  --text:      #e7e5e1;
+  --muted:     #a09c96;
+  --faint:     #6f6c67;
+  --border:    #2c3036;
+  --accent:    #8fb4e2;
+  --accent-soft: #1f262f;
+}
+
+/* ---------- 기본 ---------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  transition: border-color .15s ease, color .15s ease;
+}
+a:hover { border-bottom-color: var(--accent); }
+
+h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.25; }
+
+/* ---------- 상단 바 ---------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: .7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+  border: 0;
+  white-space: nowrap;
+}
+
+.navlinks {
+  display: flex;
+  gap: 1.1rem;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+  font-size: .88rem;
+}
+.navlinks a {
+  color: var(--muted);
+  border: 0;
+}
+.navlinks a:hover { color: var(--accent); }
+
+.theme-toggle {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: .9rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- 레이아웃 ---------- */
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 0;
+}
+
+.section { margin-bottom: 3.5rem; }
+
+.section > h2 {
+  font-size: 1.02rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  padding-bottom: .5rem;
+  margin: 0 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.subhead {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 2rem 0 .9rem;
+}
+.subhead:first-of-type { margin-top: 0; }
+
+/* ---------- 프로필 ---------- */
+
+.hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3.5rem;
+}
+
+.avatar {
+  flex: none;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+}
+
+.hero-text { min-width: 0; }
+
+.hero h1 {
+  margin: 0 0 .35rem;
+  font-size: 2.1rem;
+  letter-spacing: -.01em;
+}
+.hero h1 .hangul {
+  font-size: .55em;
+  font-weight: 400;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.role  { margin: 0; font-size: 1.02rem; }
+.affil { margin: .15rem 0 0; color: var(--muted); font-size: .95rem; }
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem .55rem;
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  font-size: .85rem;
+}
+.links a {
+  display: inline-block;
+  padding: .28rem .7rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--muted);
+  background: var(--surface);
+}
+.links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- 본문 ---------- */
+
+.lede { font-size: 1.06rem; }
+.section p { margin: 0 0 1rem; }
+.section p:last-child { margin-bottom: 0; }
+
+/* ---------- 연구 주제 카드 ---------- */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: var(--gap);
+}
+
+.card {
+  padding: 1.1rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+.card p  { margin: 0; font-size: .92rem; color: var(--muted); }
+
+/* ---------- 논문 목록 ---------- */
+
+.pubs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border);
+}
+.pub:first-child { border-top: 0; padding-top: 0; }
+
+.pub-year {
+  flex: none;
+  width: 3.4rem;
+  padding-top: .12rem;
+  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
+  color: var(--faint);
+}
+
+.pub-body { min-width: 0; }
+
+.pub-title {
+  margin: 0 0 .2rem;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+.pub-authors { margin: 0; font-size: .92rem; color: var(--muted); }
+.pub-authors strong { color: var(--text); font-weight: 600; }
+.pub-venue   { margin: .1rem 0 0; font-size: .92rem; color: var(--muted); }
+.pub-note    { color: var(--faint); }
+
+.pub-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: .55rem 0 0 !important;
+}
+.pub-actions a {
+  font-size: .74rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: .15rem .55rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+}
+.pub-actions a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- 발표 / 수상 / 학력 공통 ---------- */
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline > li {
+  display: flex;
+  gap: 1.1rem;
+  padding: .8rem 0;
+  border-top: 1px solid var(--border);
+}
+.timeline > li:first-child { border-top: 0; padding-top: 0; }
+
+.tl-date {
+  flex: none;
+  width: 6rem;
+  padding-top: .12rem;
+  font-variant-numeric: tabular-nums;
+  font-size: .85rem;
+  color: var(--faint);
+}
+
+.tl-title { margin: 0; font-weight: 600; font-size: .98rem; }
+.tl-meta  { margin: .1rem 0 0; font-size: .9rem; color: var(--muted); }
+
+.cv-note {
+  margin-top: 1.5rem !important;
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+/* ---------- 푸터 ---------- */
+
+.footer {
+  max-width: var(--measure);
+  margin: 4rem auto 0;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: .85rem;
+  color: var(--faint);
+}
+.footer p { margin: 0; }
+.footer-sub { margin-top: .2rem !important; }
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width: 46rem) {
+  .navlinks { display: none; }
+  .brand { margin-right: auto; }
+
+  main { padding-top: 2.5rem; }
+
+  .hero {
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .avatar { width: 6.5rem; height: 6.5rem; }
+  .hero h1 { font-size: 1.75rem; }
+  .hero h1 .hangul { display: block; font-size: .6em; }
+
+  .pub, .timeline > li { flex-direction: column; gap: .3rem; }
+  .pub-year, .tl-date { width: auto; padding-top: 0; }
+}
+
+/* ---------- 인쇄 ---------- */
+
+@media print {
+  .topbar, .theme-toggle { display: none; }
+  body { background: #fff; color: #000; font-size: 10.5pt; }
+  a { color: #000; border: 0; }
+  .section { break-inside: avoid; }
+}

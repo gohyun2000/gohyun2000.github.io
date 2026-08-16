@@ -1,0 +1,12 @@
+# 출판사 저작권이 있는 논문 PDF — 공개 저장소에 올리면 안 됩니다.
+# 링크는 DOI로만 걸어두었으니 이 폴더는 로컬에만 두세요.
+Papers/
+Picture/
+
+# 로컬 미리보기 설정
+.claude/
+
+# OS 부산물
+Thumbs.db
+desktop.ini
+.DS_Store
